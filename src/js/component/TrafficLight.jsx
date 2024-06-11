@@ -4,7 +4,7 @@ const TrafficLight = () => {
   const [shadowRed, setShadowRed] = useState("none");
   const [shadowYellow, setShadowYellow] = useState("none");
   const [shadowGreen, setShadowGreen] = useState("none");
-  const [yellowLigthToPurple, setYellowLigthToPurple] = useState("yellow");
+  const [yellowLightToPurple, setYellowLightToPurple] = useState("yellow");
 
   const shadowRedColor = (bgColor) => {
     setShadowRed(bgColor);
@@ -15,8 +15,8 @@ const TrafficLight = () => {
   const shadowGreenColor = (bgColor) => {
     setShadowGreen(bgColor);
   };
-  const yellowLigthChange = (LigthColor) => {
-    setYellowLigthToPurple(LigthColor);
+  const yellowLightChange = (LigthColor) => {
+    setYellowLightToPurple(LigthColor);
   };
 
   return (
@@ -41,15 +41,15 @@ const TrafficLight = () => {
         <div className="col-auto bg-dark text-white p-3 d-flex flex-column">
           <div
             style={{
-              backgroundColor: yellowLigthToPurple,
+              backgroundColor: yellowLightToPurple,
               width: "120px",
               height: "120px",
               boxShadow: shadowYellow,
             }}
-            className="rounded-circle yellowLigth"
+            className="rounded-circle"
             onMouseEnter={() => shadowYellowColor("0 0 18px yellow")}
             onMouseOut={() => shadowYellowColor("none")}
-            onClick={() => yellowLigthChange("yellow")}
+            onClick={() => yellowLightChange("yellow")}
           ></div>
         </div>
         <div className="col-auto bg-dark text-white rounded-bottom p-3 d-flex flex-column">
@@ -80,7 +80,7 @@ const TrafficLight = () => {
       <div
         className="mt-3 mx-2 pt-3 btn btn-warning"
         onClick={() =>
-          yellowLigthChange(
+          yellowLightChange(
             "#800080",
             alert(
               "Hey!!! Traffic lights don't have this color, try to restore the color without reloading the page."
